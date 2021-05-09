@@ -13,6 +13,8 @@ const partialsDirectory = path.join(__dirname, "../public/partials");
 hbs.registerPartials(partialsDirectory);
 
 app.use(express.static(publicDirectory));
+
+const port = process.env.PORT || 4000;
 //app.com
 //app.com/help
 //app.com/about
@@ -81,6 +83,6 @@ app.get('*',(req,res)=>{
 })
 
 
-app.listen(4000, () => {
-  console.log("Server is up and running on port 4000.");
+app.listen(port, () => {
+  console.log("Server is up and running on port "+port);
 });
